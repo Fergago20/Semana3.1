@@ -23,8 +23,12 @@ def main():
         except ValueError as e:
             print(f"Error: {e}. Por favor, introduce edades válidas.")
 
-    edad_obj = Edad(edades)
-    print(edad_obj.mostrar_media())
+    if not edades:
+        print("No se han introducido edades.")
+        return
+    else:
+        edad_obj = Edad(edades)
+        print(edad_obj.mostrar_media())
 
 if __name__ == "__main__":
     main()
